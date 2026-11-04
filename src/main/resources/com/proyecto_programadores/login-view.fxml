@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.proyecto_programadores.controler.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_login.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox id="Cabecera" layoutX="22.0" layoutY="22.0" prefHeight="87.0" prefWidth="280.0">
+         <children>
+            <StackPane id="logoFaust">
+               <children>
+                  <ImageView fitHeight="87.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Imagenes/faust_icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <Label prefHeight="85.0" prefWidth="207.0" text=" Comunidad de programadores" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox id="formulario" layoutX="12.0" layoutY="135.0" prefHeight="131.0" prefWidth="300.0">
+         <children>
+            <HBox prefHeight="61.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="63.0" text="Usuario:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea prefHeight="46.0" prefWidth="197.0" promptText="Introduce tu usuario               (min 5 caracteres)" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="33.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="280.0">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="118.0" text="Contraseña:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea prefHeight="46.0" prefWidth="232.0" promptText="Introduce tu contraseña " wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+            </HBox>
+         </children></VBox>
+      <HBox layoutX="23.0" layoutY="285.0" prefHeight="46.0" prefWidth="280.0">
+         <children>
+            <Button id="login" mnemonicParsing="false" prefHeight="34.0" prefWidth="133.0" text="🚪 Login">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="133.0" text="👤 Registrarse">
+               <HBox.margin>
+                  <Insets left="15.0" top="5.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <ImageView fitHeight="109.0" fitWidth="125.0" layoutX="107.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagenes/icono%20inferior.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

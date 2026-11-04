@@ -1,0 +1,20 @@
+.root{
+    -fx-background-color: white;
+}
+.label{
+    /*-fx-text-fill: white;*/
+}
+.HBox{
+    -fx-background-color: transparent;
+}
+#formulario{
+    -fx-background-color: #ede8e8;
+}
+#logoFaust{
+    -fx-background-color: black;
+
+}
+#login{
+    -fx-background-color: #5454d5;
+    -fx-text-fill: white;
+}
