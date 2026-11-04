@@ -1,14 +1,106 @@
 package com.proyecto_programadores.controler;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class LoginController {
-    @FXML
-    private Label welcomeText;
+    String usuario;
+    String password;
+    boolean usuarioValido = false;
+    boolean passwordValido = false;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private Button btnRegistro;
+    @FXML
+    private TextField txtUsuarioLogin;
+    @FXML
+    private TextField txtPasswordLogin;
+
+    @FXML
+    protected void leerUsuario(){
+        usuario = txtUsuarioLogin.getText();
+        if (usuario.length() <5){
+            mostrarError("El usuario debe contener al menos 5 caracteres");
+            txtUsuarioLogin.clear();
+            txtUsuarioLogin.setPromptText("Introduce tu usuario(min 5 caracteres) ");
+            usuario = null;
+            usuarioValido = false;
+        }
+        else{
+            usuarioValido = true;
+        }
+    }
+    @FXML
+    protected void leerPassword(){
+        int mayus = 0;
+        int minus = 0;
+        password = txtPasswordLogin.getText();
+        if (password.length() <8){
+            mostrarError("La contraseña debe contener 8 caracteres como minimo");
+            txtPasswordLogin.clear();
+            txtPasswordLogin.setPromptText("Introduce tu contraseña ");
+            password = null;
+            passwordValido = false;
+            return;
+        }
+        for (int i = 0; i < password.length(); i++) {
+
+            if (Character.isUpperCase(password.charAt(i))) {
+                mayus++;
+            }else if (Character.isLowerCase(password.charAt(i))) {
+                minus++;
+            }
+        }
+        if (mayus <1 ||minus <1){
+            mostrarError("La contraseña debe contener como minimo \n 1 mayuscula y 1 minuscula");
+            txtPasswordLogin.clear();
+            txtPasswordLogin.setPromptText("Introduce tu contraseña ");
+            password = null;
+            passwordValido = false;
+            return;
+        }
+        passwordValido = true;
+
+    }
+
+    @FXML
+    protected void lanzarRegistrar(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/proyecto_programadores/registro-view.fxml")
+        );
+
+        Parent root = loader.load();
+
+
+        Stage stage = (Stage) ((Node) event.getSource())
+                .getScene().getWindow();
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
+    private void mostrarError(String mensaje) {
+
+        Alert alerta = new Alert(Alert.AlertType.ERROR);
+
+        alerta.setTitle("Error");
+        alerta.setHeaderText("Dato incorrecto");
+        alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
     }
 }

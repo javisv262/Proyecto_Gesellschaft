@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_login.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_login.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_programadores.controler.LoginController">
    <children>
       <HBox id="Cabecera" layoutX="22.0" layoutY="22.0" prefHeight="87.0" prefWidth="280.0">
          <children>
@@ -38,11 +38,11 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="46.0" prefWidth="197.0" promptText="Introduce tu usuario               (min 5 caracteres)" wrapText="true">
+                  <TextField fx:id="txtUsuarioLogin" onAction="#leerUsuario" prefHeight="46.0" prefWidth="213.0" promptText="Introduce tu usuario(min 5 caracteres) ">
                      <HBox.margin>
-                        <Insets bottom="5.0" left="33.0" right="5.0" top="10.0" />
+                        <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
                      </HBox.margin>
-                  </TextArea>
+                  </TextField>
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="280.0">
@@ -55,17 +55,17 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <TextArea prefHeight="46.0" prefWidth="232.0" promptText="Introduce tu contraseña " wrapText="true">
+                  <TextField fx:id="txtPasswordLogin" onAction="#leerPassword" prefHeight="46.0" prefWidth="229.0" promptText="Introduce tu contraseña">
                      <HBox.margin>
                         <Insets bottom="5.0" left="10.0" right="5.0" top="10.0" />
                      </HBox.margin>
-                  </TextArea>
+                  </TextField>
                </children>
             </HBox>
          </children></VBox>
       <HBox layoutX="23.0" layoutY="285.0" prefHeight="46.0" prefWidth="280.0">
          <children>
-            <Button id="login" mnemonicParsing="false" prefHeight="34.0" prefWidth="133.0" text="🚪 Login">
+            <Button id="login" fx:id="btnLogin" mnemonicParsing="false" prefHeight="34.0" prefWidth="134.0" text="🚪 Login">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>
@@ -73,7 +73,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="15.0" layoutY="15.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="133.0" text="👤 Registrarse">
+            <Button fx:id="btnRegistro" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#lanzarRegistrar" prefHeight="34.0" prefWidth="133.0" text="👤 Registrarse">
                <HBox.margin>
                   <Insets left="15.0" top="5.0" />
                </HBox.margin>
@@ -85,7 +85,7 @@
       </HBox>
       <ImageView fitHeight="109.0" fitWidth="125.0" layoutX="107.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Imagenes/icono%20inferior.jpg" />
+            <Image url="@../../Imagenes/icono_inferior.jpg" />
          </image>
       </ImageView>
    </children>

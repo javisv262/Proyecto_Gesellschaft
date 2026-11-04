@@ -12,7 +12,7 @@ public class ProgramadoresApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ProgramadoresApplication.class.getResource("/com/proyecto_programadores/login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 323, 465);
-        stage.setTitle("Hello!");
+        stage.setTitle("Comunidad de Programadores");
         stage.setScene(scene);
         stage.show();
     }
