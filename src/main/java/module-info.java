@@ -11,4 +11,5 @@ module com.example.proyecto_programadores {
     opens com.proyecto_programadores.view to javafx.fxml;
     exports com.proyecto_programadores.controler;
     opens com.proyecto_programadores.controler to javafx.fxml;
+    opens com.proyecto_programadores.entity to db4o;
 }

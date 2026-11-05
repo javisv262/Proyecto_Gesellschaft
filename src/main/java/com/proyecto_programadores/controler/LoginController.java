@@ -1,5 +1,7 @@
 package com.proyecto_programadores.controler;
 
+import com.proyecto_programadores.DAO.ProgramadorDAO;
+import com.proyecto_programadores.entity.Programador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,13 +10,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoginController {
+    ProgramadorDAO programadorDAO;
     String usuario;
     String password;
     boolean usuarioValido = false;
@@ -32,6 +34,20 @@ public class LoginController {
     @FXML
     protected void login(){
         if(usuarioValido && passwordValido){
+            Programador programador =  new Programador();
+            programador.setUsuario(usuario);
+           Programador p = programadorDAO.comprobarUsuario(programador);
+           if(p == null){
+               mostrarError("El usuario no existe");
+               return;
+           }
+           if(password.equals(p.getPassword())){
+               //Aqui va el codigo para cambiar a la siguiente vista
+
+           }else {
+               mostrarError("Contraseña incorrecta");
+           }
+            
 
         }else {
             mostrarError("Error: el usuario o contraseña estan vacios \n asegurate de pulsar enter tras introducirlos");
