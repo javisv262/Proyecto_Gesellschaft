@@ -65,7 +65,7 @@
          </children></VBox>
       <HBox layoutX="23.0" layoutY="285.0" prefHeight="46.0" prefWidth="280.0">
          <children>
-            <Button id="login" fx:id="btnLogin" mnemonicParsing="false" prefHeight="34.0" prefWidth="134.0" text="🚪 Login">
+            <Button id="login" fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="134.0" text="🚪 Login">
                <HBox.margin>
                   <Insets top="5.0" />
                </HBox.margin>

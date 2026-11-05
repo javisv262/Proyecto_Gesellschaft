@@ -1,0 +1,21 @@
+package com.proyecto_programadores.DAO;
+
+import java.util.Objects;
+
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
+import com.proyecto_programadores.ConexionDB4o;
+import com.proyecto_programadores.entity.Programador;
+
+public class ProgramadorDAO {
+    ConexionDB4o conexionDB4o;
+    public
+    private Programador buscarAtributo(Programador programador, ObjectContainer bd) {
+        ObjectSet<Programador> todosProgramadores = bd.queryByExample(programador);
+        Programador p = null;
+        if(todosProgramadores.hasNext()){
+            p = todosProgramadores.next();
+        }
+        return p;
+    }
+}

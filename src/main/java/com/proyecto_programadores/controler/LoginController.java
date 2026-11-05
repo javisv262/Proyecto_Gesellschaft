@@ -23,9 +23,20 @@ public class LoginController {
     @FXML
     private Button btnRegistro;
     @FXML
+    private Button btnLogin;
+    @FXML
     private TextField txtUsuarioLogin;
     @FXML
     private TextField txtPasswordLogin;
+
+    @FXML
+    protected void login(){
+        if(usuarioValido && passwordValido){
+
+        }else {
+            mostrarError("Error: el usuario o contraseña estan vacios \n asegurate de pulsar enter tras introducirlos");
+        }
+    }
 
     @FXML
     protected void leerUsuario(){
