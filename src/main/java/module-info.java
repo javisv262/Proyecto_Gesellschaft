@@ -11,5 +11,5 @@ module com.example.proyecto_programadores {
     opens com.proyecto_gesellschaft.view to javafx.fxml;
     exports com.proyecto_gesellschaft.controler;
     opens com.proyecto_gesellschaft.controler to javafx.fxml;
-    opens com.proyecto_gesellschaft.entity to db4o;
+    opens com.proyecto_gesellschaft.entity to db4o, javafx.base;
 }

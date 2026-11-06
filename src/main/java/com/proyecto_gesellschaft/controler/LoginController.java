@@ -127,7 +127,7 @@ public class LoginController {
 
         Parent root = loader.load();
         InicioController controlador = loader.getController();
-        controlador.recibirProgramador(faust);
+        controlador.recibirFaust(faust);
 
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -136,7 +136,7 @@ public class LoginController {
 
         stage.setScene(scene);
         stage.setWidth(464);
-        stage.setWidth(435);
+        stage.setHeight(435);
         stage.show();
 
     }
