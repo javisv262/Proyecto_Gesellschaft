@@ -19,6 +19,9 @@ import java.io.IOException;
 public class InicioController {
     FaustDAO faustDAO;
     private Faust faust;
+    public InicioController(Faust faust){
+        this.faust = faust;
+    }
 
     @FXML
     private Label Saludo;
@@ -48,7 +51,15 @@ public class InicioController {
                 FXCollections.observableArrayList(
                         faustDAO.listarFausts(cbFiltrado.getValue(),faust));
         tablaFausts.setItems(lista);
-        mostrarAviso(faust.toString());
+        Saludo.setText("Faust actual: "+faust.getUsuario().substring(0,Math.min(12,faust.getUsuario().length())));
+    }
+    @FXML
+    protected void filtrar(){
+        ObservableList<Faust> lista =
+                FXCollections.observableArrayList(
+                        faustDAO.listarFausts(cbFiltrado.getValue(),faust));
+        tablaFausts.setItems(lista);
+
     }
     @FXML
     protected void cerrarSesion(ActionEvent event) throws IOException {
@@ -64,8 +75,7 @@ public class InicioController {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setWidth(323);
-        stage.setHeight(465.0);
+        stage.sizeToScene();
         stage.show();
 
     }
@@ -78,7 +88,7 @@ public class InicioController {
         alerta.showAndWait();
     }
 
-    public void recibirFaust(Faust faust){
-        this.faust = faust;
-    }
+//    public void recibirFaust(Faust faust){
+//        this.faust = faust;
+//    }
 }

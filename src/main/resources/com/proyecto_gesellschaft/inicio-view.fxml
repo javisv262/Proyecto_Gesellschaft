@@ -6,21 +6,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="435.0" prefWidth="464.0" stylesheets="@../../CSS/estilos_inicio.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_gesellschaft.controler.InicioController">
+<AnchorPane prefHeight="480.0" prefWidth="511.0" stylesheets="@../../CSS/estilos_inicio.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_gesellschaft.controler.InicioController">
    <children>
-      <HBox id="cabecera" prefHeight="89.0" prefWidth="464.0">
+      <HBox id="cabecera" prefHeight="98.0" prefWidth="511.0">
          <children>
             <ImageView fitHeight="97.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Imagenes/faust_icon.png" />
                </image>
             </ImageView>
-            <Label fx:id="Saludo" prefHeight="53.0" prefWidth="162.0" text="Bienvenido" textFill="WHITE">
+            <Label fx:id="Saludo" prefHeight="54.0" prefWidth="299.0" text="Faust actual: FaustLCB" textFill="WHITE">
                <HBox.margin>
                   <Insets bottom="20.0" left="10.0" top="20.0" />
                </HBox.margin>
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Button id="CerrarSesion" fx:id="btnLogout" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="38.0" prefWidth="109.0" text="🚪 Cerrar sesión" textFill="WHITE">
@@ -28,11 +28,11 @@
                   <Font size="13.0" />
                </font>
                <HBox.margin>
-                  <Insets bottom="30.0" left="80.0" top="30.0" />
+                  <Insets bottom="30.0" top="30.0" />
                </HBox.margin>
             </Button>
          </children></HBox>
-      <TableView fx:id="tablaFausts" layoutX="14.0" layoutY="144.0" prefHeight="218.0" prefWidth="435.0">
+      <TableView fx:id="tablaFausts" layoutX="38.0" layoutY="142.0" prefHeight="218.0" prefWidth="435.0">
         <columns>
           <TableColumn fx:id="colUsuario" prefWidth="75.0" text="Usuario" />
           <TableColumn fx:id="colPermisos" prefWidth="75.0" text="Permisos" />
@@ -47,6 +47,6 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cbFiltrado" layoutX="134.0" layoutY="106.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbFiltrado" layoutX="134.0" layoutY="106.0" onAction="#filtrar" prefWidth="150.0" />
    </children>
 </AnchorPane>

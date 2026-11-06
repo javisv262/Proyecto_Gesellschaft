@@ -66,6 +66,7 @@ public class LoginController {
         }
         else{
             usuarioValido = true;
+            txtPasswordLogin.requestFocus();
         }
     }
     @FXML
@@ -124,19 +125,16 @@ public class LoginController {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("/com/proyecto_gesellschaft/inicio-view.fxml")
         );
+        loader.setControllerFactory(tipo -> new InicioController(faust));
 
         Parent root = loader.load();
-        InicioController controlador = loader.getController();
-        controlador.recibirFaust(faust);
-
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
-        stage.setWidth(464);
-        stage.setHeight(435);
+        stage.sizeToScene();
         stage.show();
 
     }

@@ -50,7 +50,11 @@ public class RegistroController {
                     String lenguaje = cbLenguajeRegistro.getValue();
                     Faust faust = new Faust(usuario,password,genero,lenguaje);
                    faustDAO.altaFaust(faust);
-                   mostrarAviso("Faust registrado con exito");
+                   mostrarAviso("Faust registrada con exito");
+                   txtNombreRegistro.clear();
+                   txtPasswordRegistro.clear();
+                   usuario_valido = false;
+                   password_valido = false;
                 }else {
                     mostrarError("Campos vacios");
                 }
@@ -117,6 +121,7 @@ public class RegistroController {
                 usuario_valido = false;
             }else {
                 usuario_valido = true;
+                txtPasswordRegistro.requestFocus();
             }
 
         }

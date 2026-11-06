@@ -1,14 +1,21 @@
-.root{
-    -fx-background-color: white;
-}
-.label{
-    /*-fx-text-fill: white;*/
+.root {
+    -fx-background-image: url("../Imagenes/Gesellschaft.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-size: 100% 100%;
 }
 .HBox{
     -fx-background-color: transparent;
 }
+.label {
+    -fx-text-fill: white;
+}
+#Cabecera{
+    -fx-text-fill: black;
+
+}
 #formulario{
-    -fx-background-color: #ede8e8;
+    -fx-background-color: transparent;
 }
 #logoFaust{
     -fx-background-color: black;

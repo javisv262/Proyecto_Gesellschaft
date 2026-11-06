@@ -34,7 +34,7 @@ public class FaustDAO {
                 ObjectSet<Faust> resultado = bd.queryByExample(Faust.class);
                 while (resultado.hasNext()) {
                     Faust f = resultado.next();
-                    if(!f.equals(excluir)){
+                    if(!f.getUsuario().equals(excluir.getUsuario())){
                         lista.add(f);
                     }
                 }
