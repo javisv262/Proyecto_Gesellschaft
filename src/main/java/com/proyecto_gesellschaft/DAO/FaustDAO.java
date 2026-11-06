@@ -5,6 +5,9 @@ import com.db4o.ObjectSet;
 import com.proyecto_gesellschaft.ConexionDB4o;
 import com.proyecto_gesellschaft.entity.Faust;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FaustDAO {
     ConexionDB4o conexionDB4o;
     public void altaFaust(Faust faust){
@@ -14,6 +17,32 @@ public class FaustDAO {
         bd.commit();
         bd.close();
 
+    }
+    public List<Faust> listarFausts(String filtro, Faust excluir){
+        List<Faust> lista = new ArrayList<Faust>();
+        conexionDB4o = new ConexionDB4o();
+        ObjectContainer bd =conexionDB4o.abrirConexion();
+        try {
+            if (!filtro.equals("Todos")) {
+                Faust ejemplo = new Faust();
+                ejemplo.setLenguaje(filtro);
+                ObjectSet<Faust> resultado = bd.queryByExample(ejemplo);
+                while (resultado.hasNext()) {
+                    lista.add(resultado.next());
+                }
+            }else {
+                ObjectSet<Faust> resultado = bd.queryByExample(Faust.class);
+                while (resultado.hasNext()) {
+                    Faust f = resultado.next();
+                    if(!f.equals(excluir)){
+                        lista.add(f);
+                    }
+                }
+            }
+        }finally {
+            bd.close();
+        }
+        return lista;
     }
     public Faust comprobarUsuario(Faust faust){
         conexionDB4o = new ConexionDB4o();
