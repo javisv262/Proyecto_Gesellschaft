@@ -41,6 +41,7 @@ public class RegistroController {
     }
     @FXML
     protected void registrarProgramador(){
+        programadorDAO = new ProgramadorDAO();
         if (usuario_valido && password_valido){
             if (grupoGenero.getSelectedToggle() != null){
                 RadioButton rb = (RadioButton) grupoGenero.getSelectedToggle();
@@ -48,7 +49,8 @@ public class RegistroController {
                 if (cbLenguajeRegistro.getValue() != null){
                     String lenguaje = cbLenguajeRegistro.getValue();
                     Programador programador = new Programador(usuario,password,genero,lenguaje);
-                    //Aqui va una llamada al DAO para registrar al programador
+                   programadorDAO.altaProgramador(programador);
+                   mostrarAviso("Programador registrado con exito");
                 }else {
                     mostrarError("Campos vacios");
                 }
@@ -144,6 +146,14 @@ public class RegistroController {
         alerta.setTitle("Error");
         alerta.setHeaderText("Dato incorrecto");
         alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
+    }
+    private void mostrarAviso(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Aviso");
+        alerta.setHeaderText(mensaje);
+        //alerta.setContentText(mensaje);
 
         alerta.showAndWait();
     }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="465.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_programadores.controler.RegistroController">
+<AnchorPane prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_registro.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_programadores.controler.RegistroController">
    <children>
       <Label layoutX="14.0" layoutY="30.0" prefHeight="38.0" prefWidth="250.0" text="👤 Registro de Usuario">
          <font>
@@ -117,7 +117,7 @@
       </VBox>
       <HBox layoutX="18.0" layoutY="326.0" prefHeight="39.0" prefWidth="282.0">
          <children>
-            <Button id="registrar" fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarProgramador" prefHeight="34.0" prefWidth="131.0" stylesheets="@../../CSS/estilos_registro.css" text="👤 Registrar">
+            <Button id="registrar" fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarProgramador" prefHeight="34.0" prefWidth="131.0" text="👤 Registrar">
                <font>
                   <Font size="15.0" />
                </font></Button>

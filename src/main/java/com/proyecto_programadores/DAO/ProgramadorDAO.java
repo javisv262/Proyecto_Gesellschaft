@@ -7,6 +7,14 @@ import com.proyecto_programadores.entity.Programador;
 
 public class ProgramadorDAO {
     ConexionDB4o conexionDB4o;
+    public void altaProgramador(Programador programador){
+        conexionDB4o = new ConexionDB4o();
+        ObjectContainer bd =conexionDB4o.abrirConexion();
+        bd.store(programador);
+        bd.commit();
+        bd.close();
+
+    }
     public Programador comprobarUsuario(Programador programador){
         conexionDB4o = new ConexionDB4o();
         ObjectContainer bd =conexionDB4o.abrirConexion();

@@ -1,0 +1,9 @@
+#cabecera{
+    -fx-background-color: #1818f1;
+}
+#CerrarSesion{
+    -fx-background-color: #5050ef;
+    -fx-border-color: #409be6;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
