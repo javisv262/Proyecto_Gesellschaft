@@ -1,7 +1,7 @@
-package com.proyecto_programadores.controler;
+package com.proyecto_gesellschaft.controler;
 
-import com.proyecto_programadores.DAO.ProgramadorDAO;
-import com.proyecto_programadores.entity.Programador;
+import com.proyecto_gesellschaft.DAO.FaustDAO;
+import com.proyecto_gesellschaft.entity.Faust;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoginController {
-    ProgramadorDAO programadorDAO;
+    FaustDAO faustDAO;
     String usuario;
     String password;
     boolean usuarioValido = false;
@@ -32,25 +32,24 @@ public class LoginController {
     private TextField txtPasswordLogin;
 
     @FXML
-    protected void login(){
+    protected void login(ActionEvent event) throws IOException {
         if(usuarioValido && passwordValido){
-            Programador programador =  new Programador();
-            programador.setUsuario(usuario);
-           Programador p = programadorDAO.comprobarUsuario(programador);
+            Faust faust =  new Faust();
+            faust.setUsuario(usuario);
+           Faust p = faustDAO.comprobarUsuario(faust);
            if(p == null){
-               mostrarError("El usuario no existe");
+               mostrarError("Esta Faust no existe");
                return;
            }
            if(password.equals(p.getPassword())){
-               //Aqui va el codigo para cambiar a la siguiente vista
+               lanzarInicio(event,p);
 
            }else {
                mostrarError("Contraseña incorrecta");
            }
-            
 
         }else {
-            mostrarError("Error: el usuario o contraseña estan vacios \n asegurate de pulsar enter tras introducirlos");
+            mostrarError("Error: el usuario de Faust o la contraseña \n estan vacios asegurate de pulsar enter tras introducirlos");
         }
     }
 
@@ -58,7 +57,7 @@ public class LoginController {
     protected void leerUsuario(){
         usuario = txtUsuarioLogin.getText();
         if (usuario.length() <5){
-            mostrarError("El usuario debe contener al menos 5 caracteres");
+            mostrarError("El usuario de Faust debe contener al menos 5 caracteres");
             txtUsuarioLogin.clear();
             txtUsuarioLogin.setPromptText("Introduce tu usuario(min 5 caracteres) ");
             usuario = null;
@@ -104,7 +103,7 @@ public class LoginController {
     @FXML
     protected void lanzarRegistrar(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/proyecto_programadores/registro-view.fxml")
+                getClass().getResource("/com/proyecto_gesellschaft/registro-view.fxml")
         );
 
         Parent root = loader.load();
@@ -116,6 +115,27 @@ public class LoginController {
         Scene scene = new Scene(root);
 
         stage.setScene(scene);
+        stage.show();
+
+    }
+    @FXML
+    protected void lanzarInicio(ActionEvent event, Faust faust) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/proyecto_gesellschaft/inicio-view.fxml")
+        );
+
+        Parent root = loader.load();
+        InicioController controlador = loader.getController();
+        controlador.recibirProgramador(faust);
+
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.setWidth(464);
+        stage.setWidth(435);
         stage.show();
 
     }

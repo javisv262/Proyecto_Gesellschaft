@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_login.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_programadores.controler.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_login.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_gesellschaft.controler.LoginController">
    <children>
       <HBox id="Cabecera" layoutX="22.0" layoutY="22.0" prefHeight="87.0" prefWidth="280.0">
          <children>
@@ -19,7 +19,7 @@
                   </ImageView>
                </children>
             </StackPane>
-            <Label prefHeight="85.0" prefWidth="207.0" text=" Comunidad de programadores" wrapText="true">
+            <Label prefHeight="85.0" prefWidth="207.0" text="The Gesellschaft" wrapText="true">
                <font>
                   <Font name="System Bold" size="26.0" />
                </font>
@@ -30,7 +30,7 @@
          <children>
             <HBox prefHeight="61.0" prefWidth="280.0">
                <children>
-                  <Label prefHeight="31.0" prefWidth="63.0" text="Usuario:">
+                  <Label prefHeight="31.0" prefWidth="63.0" text="Faust:">
                      <HBox.margin>
                         <Insets left="10.0" top="10.0" />
                      </HBox.margin>

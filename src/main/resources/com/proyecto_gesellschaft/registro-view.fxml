@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_registro.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_programadores.controler.RegistroController">
+<AnchorPane prefHeight="465.0" prefWidth="323.0" stylesheets="@../../CSS/estilos_registro.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_gesellschaft.controler.RegistroController">
    <children>
-      <Label layoutX="14.0" layoutY="30.0" prefHeight="38.0" prefWidth="250.0" text="👤 Registro de Usuario">
+      <Label layoutX="14.0" layoutY="30.0" prefHeight="38.0" prefWidth="250.0" text="👤 Registro de Faust">
          <font>
             <Font size="25.0" />
          </font>
@@ -16,7 +16,7 @@
          <children>
             <HBox prefHeight="39.0" prefWidth="289.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="133.0" text="Nombre de usuario:">
+                  <Label prefHeight="27.0" prefWidth="133.0" text="Usuario de Faust:">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -52,7 +52,7 @@
             </HBox>
             <HBox prefHeight="81.0" prefWidth="250.0">
                <children>
-                  <Label text="Género:">
+                  <Label prefHeight="27.0" prefWidth="62.0" text="Permisos">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -62,7 +62,7 @@
                   </Label>
                   <VBox prefHeight="81.0" prefWidth="142.0">
                      <children>
-                        <RadioButton fx:id="rbHombre" mnemonicParsing="false" text="Hombre">
+                        <RadioButton fx:id="rbHombre" mnemonicParsing="false" text="Administrador">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -70,10 +70,10 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                            <toggleGroup>
-                              <ToggleGroup fx:id="grupoGenero" />
+                              <ToggleGroup fx:id="grupoPermisos" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rbMujer" mnemonicParsing="false" text="Mujer" toggleGroup="$grupoGenero">
+                        <RadioButton fx:id="rbMujer" mnemonicParsing="false" text="Estándar" toggleGroup="$grupoPermisos">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -81,7 +81,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="rbPrefieroNoDecirlo" mnemonicParsing="false" text="Prefiero no decirlo" toggleGroup="$grupoGenero">
+                        <RadioButton fx:id="rbPrefieroNoDecirlo" mnemonicParsing="false" text="Faust inferior" toggleGroup="$grupoPermisos">
                            <font>
                               <Font size="14.0" />
                            </font>

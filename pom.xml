@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>Proyecto_Programadores</artifactId>
+    <artifactId>Proyecto_Gesellschaft</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Proyecto_Programadores</name>
 
@@ -65,7 +65,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.proyecto_programadores/com.proyecto_programadores.view.ProgramadoresApplication
+                                com.example.proyecto_programadores/com.proyecto_gesellschaft.view.FaustApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

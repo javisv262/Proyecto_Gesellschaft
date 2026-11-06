@@ -1,10 +1,10 @@
-package com.proyecto_programadores;
+package com.proyecto_gesellschaft;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 
 public class ConexionDB4o {
-    static final String DB_FILE = "comunidadProgramadores.db4o";
+    static final String DB_FILE = "gesellschaft.db4o";
 
     public ObjectContainer abrirConexion(){
 

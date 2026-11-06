@@ -1,7 +1,7 @@
-package com.proyecto_programadores.controler;
+package com.proyecto_gesellschaft.controler;
 
-import com.proyecto_programadores.DAO.ProgramadorDAO;
-import com.proyecto_programadores.entity.Programador;
+import com.proyecto_gesellschaft.DAO.FaustDAO;
+import com.proyecto_gesellschaft.entity.Faust;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RegistroController {
-    ProgramadorDAO programadorDAO;
+    FaustDAO faustDAO;
     boolean usuario_valido = false;
     boolean password_valido = false;
     String usuario;
@@ -31,7 +31,7 @@ public class RegistroController {
     @FXML
     private TextField txtPasswordRegistro;
     @FXML
-    private ToggleGroup grupoGenero;
+    private ToggleGroup grupoPermisos;
 
     @FXML
     protected void initialize(){
@@ -41,16 +41,16 @@ public class RegistroController {
     }
     @FXML
     protected void registrarProgramador(){
-        programadorDAO = new ProgramadorDAO();
+        faustDAO = new FaustDAO();
         if (usuario_valido && password_valido){
-            if (grupoGenero.getSelectedToggle() != null){
-                RadioButton rb = (RadioButton) grupoGenero.getSelectedToggle();
+            if (grupoPermisos.getSelectedToggle() != null){
+                RadioButton rb = (RadioButton) grupoPermisos.getSelectedToggle();
                 String genero = rb.getText();
                 if (cbLenguajeRegistro.getValue() != null){
                     String lenguaje = cbLenguajeRegistro.getValue();
-                    Programador programador = new Programador(usuario,password,genero,lenguaje);
-                   programadorDAO.altaProgramador(programador);
-                   mostrarAviso("Programador registrado con exito");
+                    Faust faust = new Faust(usuario,password,genero,lenguaje);
+                   faustDAO.altaFaust(faust);
+                   mostrarAviso("Faust registrado con exito");
                 }else {
                     mostrarError("Campos vacios");
                 }
@@ -96,7 +96,7 @@ public class RegistroController {
     }
     @FXML
     protected void leerUsuario(){
-        programadorDAO = new ProgramadorDAO();
+        faustDAO = new FaustDAO();
         usuario = txtNombreRegistro.getText();
         if (usuario.length() <5){
             mostrarError("El usuario debe contener al menos 5 caracteres");
@@ -106,11 +106,11 @@ public class RegistroController {
             usuario_valido = false;
         }
         else{
-            Programador programador =  new Programador();
-            programador.setUsuario(usuario);
-            Programador p = programadorDAO.comprobarUsuario(programador);
+            Faust faust =  new Faust();
+            faust.setUsuario(usuario);
+            Faust p = faustDAO.comprobarUsuario(faust);
             if (p != null){
-                mostrarError("El usuario ya existe");
+                mostrarError("El usuario ya pertenece a otra Faust");
                 txtNombreRegistro.clear();
                 txtNombreRegistro.setPromptText("Introduce tu usuario(min 5 caracteres) ");
                 usuario = null;
@@ -124,7 +124,7 @@ public class RegistroController {
     @FXML
     protected void lanzarLogin(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("/com/proyecto_programadores/login-view.fxml")
+                getClass().getResource("/com/proyecto_gesellschaft/login-view.fxml")
         );
 
         Parent root = loader.load();

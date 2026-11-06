@@ -1,19 +1,19 @@
-package com.proyecto_programadores.entity;
+package com.proyecto_gesellschaft.entity;
 
-public class Programador {
+public class Faust {
     private String usuario;
     private String password;
-    private String genero;
+    private String permisos;
     private String lenguaje;
 
-    public Programador(String usuario, String password, String genero, String lenguaje) {
+    public Faust(String usuario, String password, String permisos, String lenguaje) {
         this.usuario = usuario;
         this.password = password;
-        this.genero = genero;
+        this.permisos = permisos;
         this.lenguaje = lenguaje;
     }
 
-    public Programador() {
+    public Faust() {
     }
 
     public String getUsuario() {
@@ -32,12 +32,12 @@ public class Programador {
         this.password = password;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getPermisos() {
+        return permisos;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setPermisos(String permisos) {
+        this.permisos = permisos;
     }
 
     public String getLenguaje() {
@@ -50,6 +50,6 @@ public class Programador {
 
     @Override
     public String toString() {
-        return"Usuario: " + this.usuario + " Contraseña: " + this.password + " Genero: " + this.genero + " Lenguaje: " + this.lenguaje;}
+        return"Usuario: " + this.usuario + " Contraseña: " + this.password + " Permisos: " + this.permisos + " Lenguaje: " + this.lenguaje;}
 
 }
