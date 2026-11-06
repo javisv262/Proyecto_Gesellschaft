@@ -33,6 +33,7 @@ public class LoginController {
 
     @FXML
     protected void login(ActionEvent event) throws IOException {
+        faustDAO = new FaustDAO();
         if(usuarioValido && passwordValido){
             Faust faust =  new Faust();
             faust.setUsuario(usuario);

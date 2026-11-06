@@ -85,7 +85,7 @@
       </HBox>
       <ImageView fitHeight="109.0" fitWidth="125.0" layoutX="107.0" layoutY="342.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Imagenes/icono_inferior.jpg" />
+            <Image url="@../../Imagenes/FaustFront.jpg" />
          </image>
       </ImageView>
    </children>
