@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="307.0" prefWidth="667.0" stylesheets="@../../CSS/estilos_registro.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto_gesellschaft.controler.EditarController">
+   <children>
+      <Label layoutX="162.0" layoutY="39.0" prefHeight="38.0" prefWidth="250.0" text="✎ Editar Faust">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox layoutX="162.0" layoutY="77.0" prefHeight="176.0" prefWidth="465.0">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="289.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="133.0" text="Usuario de Faust:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtNombreRegistro" editable="false" onAction="#leerUsuario" prefHeight="29.0" prefWidth="290.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children></HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="39.0" prefWidth="289.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="133.0" text="Contraseña:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtPasswordRegistro" onAction="#leerPassword" prefHeight="29.0" prefWidth="291.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="3.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets top="4.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="37.0" prefWidth="289.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="62.0" text="Permisos">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="75.0" />
+                     </HBox.margin>
+                  </Label>
+                  <RadioButton fx:id="rbHombre" mnemonicParsing="false" text="Administrador">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="grupoPermisos" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rbMujer" mnemonicParsing="false" text="Estándar" toggleGroup="$grupoPermisos">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="rbPrefieroNoDecirlo" mnemonicParsing="false" text="Faust inferior" toggleGroup="$grupoPermisos">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="289.0">
+               <children>
+                  <Label prefHeight="46.0" prefWidth="133.0" text="Lenguaje de programacion:" wrapText="true">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="cbLenguajeRegistro" prefHeight="30.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets top="12.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="btnIrLogin" layoutX="517.0" layoutY="253.0" mnemonicParsing="false" onAction="#lanzarLogin" prefHeight="34.0" prefWidth="136.0" text="❌ Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button id="registrar" fx:id="btnRegistrar" layoutX="374.0" layoutY="253.0" mnemonicParsing="false" onAction="#registrarProgramador" prefHeight="34.0" prefWidth="131.0" text="💾 Guardar cambios" />
+      <ImageView fitHeight="144.0" fitWidth="136.0" layoutX="14.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagenes/Paust.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
