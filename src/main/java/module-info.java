@@ -3,6 +3,8 @@ module com.example.proyecto_programadores {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
+    requires org.apache.poi.ooxml;
+    requires com.github.librepdf.openpdf;
     requires db4o;
 
     opens com.proyecto_gesellschaft to javafx.fxml;
