@@ -83,6 +83,7 @@ public class InicioController {
         FileChooser selector = new FileChooser();
         selector.setTitle("Guardar registros Gesellschaft");
         selector.setInitialFileName("Gesellschaft.pdf");
+        selector.setInitialDirectory(new File(System.getProperty("user.dir")));
 
         selector.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF(*.pdf)", "*.pdf"));
 
@@ -129,6 +130,7 @@ public class InicioController {
         FileChooser selector = new FileChooser();
         selector.setTitle("Guardar registros Gesellschaft");
         selector.setInitialFileName("Gesellschaft.xlsx");
+        selector.setInitialDirectory(new File(System.getProperty("user.dir")));
 
         selector.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel (*.xlsx)", "*.xlsx"));
 

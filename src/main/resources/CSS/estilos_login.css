@@ -10,9 +10,8 @@
 .label {
     -fx-text-fill: white;
 }
-#Cabecera{
-    -fx-text-fill: black;
-
+#cabecera{
+    -fx-background-color: #1818f1;
 }
 #formulario{
     -fx-background-color: transparent;
@@ -24,4 +23,7 @@
 #login{
     -fx-background-color: #5454d5;
     -fx-text-fill: white;
+}
+#btnSalir{
+    -fx-background-color:red;
 }

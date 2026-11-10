@@ -40,7 +40,7 @@ public class RegistroController {
         cbLenguajeRegistro.getItems().add("JavaScript");
     }
     @FXML
-    protected void registrarProgramador(){
+    protected void registrarProgramador(ActionEvent event) throws IOException {
         faustDAO = new FaustDAO();
         if (usuario_valido && password_valido){
             if (grupoPermisos.getSelectedToggle() != null){
@@ -55,6 +55,7 @@ public class RegistroController {
                    txtPasswordRegistro.clear();
                    usuario_valido = false;
                    password_valido = false;
+                   lanzarLogin(event);
                 }else {
                     mostrarError("Campos vacios");
                 }

@@ -30,6 +30,8 @@ public class LoginController {
     private TextField txtUsuarioLogin;
     @FXML
     private TextField txtPasswordLogin;
+    @FXML
+    private Button btnSalir;
 
     @FXML
     protected void login(ActionEvent event) throws IOException {
@@ -70,7 +72,7 @@ public class LoginController {
         }
     }
     @FXML
-    protected void leerPassword(){
+    protected void leerPassword(ActionEvent event) throws IOException {
         int mayus = 0;
         int minus = 0;
         password = txtPasswordLogin.getText();
@@ -99,6 +101,7 @@ public class LoginController {
             return;
         }
         passwordValido = true;
+        login(event);
 
     }
 
@@ -138,6 +141,11 @@ public class LoginController {
         stage.show();
 
     }
+    @FXML
+    protected void Salir(){
+        mostrarAviso("Finalizando conexion con el Gesellschaft");
+        System.exit(0);
+    }
 
     private void mostrarError(String mensaje) {
 
@@ -146,6 +154,14 @@ public class LoginController {
         alerta.setTitle("Error");
         alerta.setHeaderText("Dato incorrecto");
         alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
+    }
+    private void mostrarAviso(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Aviso");
+        alerta.setHeaderText(mensaje);
+        //alerta.setContentText(mensaje);
 
         alerta.showAndWait();
     }
