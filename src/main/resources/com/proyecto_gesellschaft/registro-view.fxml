@@ -63,7 +63,7 @@
                   </Label>
                   <VBox prefHeight="81.0" prefWidth="142.0">
                      <children>
-                        <RadioButton fx:id="rbHombre" mnemonicParsing="false" text="Administrador">
+                        <RadioButton fx:id="rbAdmin" mnemonicParsing="false" text="Administrador">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -74,7 +74,7 @@
                               <ToggleGroup fx:id="grupoPermisos" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="rbMujer" mnemonicParsing="false" text="Estándar" toggleGroup="$grupoPermisos">
+                        <RadioButton fx:id="rbEstandar" mnemonicParsing="false" text="Estándar" toggleGroup="$grupoPermisos">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -82,7 +82,7 @@
                               <Insets top="5.0" />
                            </VBox.margin>
                         </RadioButton>
-                        <RadioButton fx:id="rbPrefieroNoDecirlo" mnemonicParsing="false" text="Faust inferior" toggleGroup="$grupoPermisos">
+                        <RadioButton fx:id="rbInferior" mnemonicParsing="false" text="Faust inferior" toggleGroup="$grupoPermisos">
                            <font>
                               <Font size="14.0" />
                            </font>

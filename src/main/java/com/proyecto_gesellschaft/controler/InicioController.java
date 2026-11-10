@@ -52,6 +52,8 @@ public class InicioController {
     private Button btnExcel;
     @FXML
     private Button btnPDF;
+    @FXML
+    private Button btnEditar;
 
     @FXML
     protected void initialize(){
@@ -174,6 +176,24 @@ public class InicioController {
 
         Parent root = loader.load();
 
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.show();
+
+    }
+    @FXML
+    protected void lanzarEditar(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/com/proyecto_gesellschaft/editar-view.fxml")
+        );
+        loader.setControllerFactory(tipo -> new EditarController(faust));
+
+        Parent root = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 

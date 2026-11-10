@@ -45,11 +45,11 @@ public class RegistroController {
         if (usuario_valido && password_valido){
             if (grupoPermisos.getSelectedToggle() != null){
                 RadioButton rb = (RadioButton) grupoPermisos.getSelectedToggle();
-                String genero = rb.getText();
+                String permisos = rb.getText();
                 if (cbLenguajeRegistro.getValue() != null){
                     String lenguaje = cbLenguajeRegistro.getValue();
-                    Faust faust = new Faust(usuario,password,genero,lenguaje);
-                   faustDAO.altaFaust(faust);
+                    Faust faust = new Faust(usuario,password,permisos,lenguaje);
+                    faustDAO.altaFaust(faust);
                    mostrarAviso("Faust registrada con exito");
                    txtNombreRegistro.clear();
                    txtPasswordRegistro.clear();
