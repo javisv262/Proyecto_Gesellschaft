@@ -18,6 +18,22 @@ public class FaustDAO {
         bd.close();
 
     }
+    public void editarFaust(Faust faust){
+        conexionDB4o = new ConexionDB4o();
+        ObjectContainer bd =conexionDB4o.abrirConexion();
+
+        Faust filtro = new Faust();
+        filtro.setUsuario(faust.getUsuario());
+
+        Faust fguardada = buscarAtributo(filtro,bd);
+        fguardada.setPassword(faust.getPassword());
+        fguardada.setPermisos(faust.getPermisos());
+        fguardada.setLenguaje(faust.getLenguaje());
+
+        bd.store(fguardada);
+        bd.commit();
+        bd.close();
+    }
     public List<Faust> listarFausts(String filtro, Faust excluir){
         List<Faust> lista = new ArrayList<Faust>();
         conexionDB4o = new ConexionDB4o();

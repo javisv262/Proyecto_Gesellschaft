@@ -1,5 +1,6 @@
 package com.proyecto_gesellschaft.controler;
 
+import com.proyecto_gesellschaft.DAO.FaustDAO;
 import com.proyecto_gesellschaft.entity.Faust;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class EditarController {
+    FaustDAO faustDAO;
     private Faust faust;
     @FXML
     private TextField txtNombreEditar;
@@ -86,7 +88,8 @@ public class EditarController {
         password_valido = true;
     }
     @FXML
-    protected void GuardarCambios(){
+    protected void GuardarCambios(ActionEvent event) throws IOException {
+        faustDAO = new FaustDAO();
         if (password_valido){
             if (grupoPermisos.getSelectedToggle() != null){
                 RadioButton rb = (RadioButton) grupoPermisos.getSelectedToggle();
@@ -95,6 +98,12 @@ public class EditarController {
                 faust.setPassword(password);
                 faust.setPermisos(permisos);
                 faust.setLenguaje(lenguaje);
+
+                faustDAO.editarFaust(faust);
+
+                mostrarAviso("Cambios aplicados correctamente");
+                volverInicio(event);
+
 
             }else {
                 mostrarError("Error, asegurate de que \n el apartado de permisos no este en blanco");
@@ -121,6 +130,14 @@ public class EditarController {
         stage.sizeToScene();
         stage.show();
 
+    }
+    private void mostrarAviso(String mensaje) {
+        Alert alerta = new Alert(Alert.AlertType.INFORMATION);
+        alerta.setTitle("Aviso");
+        alerta.setHeaderText(mensaje);
+        //alerta.setContentText(mensaje);
+
+        alerta.showAndWait();
     }
     private void mostrarError(String mensaje) {
 
